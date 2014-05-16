@@ -41,8 +41,13 @@ class KnowledgeNetStoreApp < Sinatra::Base
       :desc => params[:desc]
     )
     if @net.save
-      return haml :index
+      return redirect "/"
     end
-    haml :nets_new
+    redirect "/nets/new"
+  end
+
+  get "/nets/:id" do
+    @net = KnowledgeNetStore::Net.find(params[:id])
+    haml :net_show
   end
 end

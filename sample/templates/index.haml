@@ -3,4 +3,5 @@
 
 .list
   - KnowledgeNetStore::Net.all.each do |net|
-    .net= net.name
+    .net
+      %a{:href=>"/nets/#{net.id}"}= net.name
