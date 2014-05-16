@@ -1,0 +1,12 @@
+development:
+  sessions:
+    default:
+      database: knowledge-net-store_dev
+      hosts:
+        - 192.168.1.2:27017
+test:
+  sessions:
+    default:
+      database: knowledge-net-store_test
+      hosts:
+        - 192.168.1.2:27017
