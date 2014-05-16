@@ -1,15 +1,15 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'knowledge/net/store/version'
+require 'knowledge-net-store/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "knowledge-net-store"
   spec.version       = Knowledge::Net::Store::VERSION
   spec.authors       = ["fushang318"]
   spec.email         = ["fushang318@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{为知识点前端结构提供 MongoDB 下的持久化保存}
+  spec.summary       = %q{为知识点前端结构提供 MongoDB 下的持久化保存}
   spec.homepage      = ""
   spec.license       = "MIT"
 
