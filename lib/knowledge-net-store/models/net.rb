@@ -5,5 +5,7 @@ module KnowledgeNetStore
 
     field :name, :type => String
     field :desc, :type => String
+
+    validates :name, :presence => true, :uniqueness => true
   end
 end

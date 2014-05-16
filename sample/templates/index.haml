@@ -1,0 +1,6 @@
+.new
+  %a{:href=>"/nets/new"} new net
+
+.list
+  - KnowledgeNetStore::Net.all.each do |net|
+    .net= net.name

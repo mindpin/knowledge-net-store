@@ -13,5 +13,7 @@ module KnowledgeNetStore
     has_and_belongs_to_many :children,
       :class_name => 'KnowledgeNetStore::Point',
       :inverse_of => :parents
+
+    validates :name, :presence => true, :uniqueness => {:scope => :net_id}
   end
 end

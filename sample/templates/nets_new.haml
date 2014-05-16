@@ -1,0 +1,9 @@
+.page-net-new
+  %form{:action => "/nets", :method => "post"}
+    .field
+      %input{:type => "text", :name => "name", :placeholder => "名称"}
+    .field
+      %textarea{:name => "desc", :placeholder => "描述"}
+    .field
+      %input{:type => "submit", :value => "创建", :class => "button"}
+      %a{:href=>"/"}取消
