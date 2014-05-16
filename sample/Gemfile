@@ -25,4 +25,4 @@ end
 
 gem 'knowledge-net-store',
     :git => 'git://github.com/mindpin/knowledge-net-store.git',
-    :tag => '0.0.2'
+    :tag => '0.0.3'

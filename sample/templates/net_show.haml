@@ -1,3 +1,9 @@
 .page-net-show
   .name= @net.name
   .desc= @net.desc
+
+  .new-point
+    %a{:href => "/nets/#{@net.id}/points/new"} new point
+  .point-list
+    - @net.points.each do |point|
+      = point.name
