@@ -50,4 +50,24 @@ class KnowledgeNetStoreApp < Sinatra::Base
     @net = KnowledgeNetStore::Net.find(params[:id])
     haml :net_show
   end
+
+  get "/nets/:id/edit" do
+    @net = KnowledgeNetStore::Net.find(params[:id])
+    haml :net_edit
+  end
+
+  post "/nets/:id" do
+    @net = KnowledgeNetStore::Net.find(params[:id])
+    @net.name = params[:name]
+    @net.desc = params[:desc]
+    @net.save
+    redirect "/nets/#{params[:id]}"
+  end
+
+  delete "/nets/:id/destroy" do
+    @net = KnowledgeNetStore::Net.find(params[:id])
+    @net.destroy
+    status 200
+  end
+
 end

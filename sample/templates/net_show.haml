@@ -1,9 +1,15 @@
+.navbar
+  %a{:href=>"/"}首页
 .page-net-show
-  .name= @net.name
-  .desc= @net.desc
-
-  .new-point
-    %a{:href => "/nets/#{@net.id}/points/new"} new point
+  .action
+    %a.edit{:href => "/nets/#{@net.id}/edit"} 编辑
+    %a.delete{:href => "javascript:;",:"data-netid" => @net.id}删除
+  .info
+    .name= @net.name
+    .desc= @net.desc
+    
+  .action
+    %a.new-point{:href => "/nets/#{@net.id}/points/new"} new point
   .point-list
     - @net.points.each do |point|
-      = point.name
+      .point= point.name
