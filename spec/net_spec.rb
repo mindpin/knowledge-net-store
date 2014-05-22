@@ -19,5 +19,6 @@ describe KnowledgeNetStore::Net do
     net = KnowledgeNetStore::Net.last
     json = net.to_json
     json.should_not == ""
+    JSON.parse(json)["points"].first["id"].class.should == String
   }
 end

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 require "bundler"
 Bundler.setup(:default)
+require 'active_support/dependencies/autoload'
 require 'mongoid'
 ENV['RACK_ENV'] = 'test'
 Mongoid.load!(File.expand_path("../mongoid.yml",__FILE__))

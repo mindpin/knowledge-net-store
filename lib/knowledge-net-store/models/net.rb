@@ -17,10 +17,10 @@ module KnowledgeNetStore
       edges_hash  = []
 
       self.points.each do |point|
-        point_hash = {:id => point.id, :name => point.name, :desc => point.desc}
+        point_hash = {:id => point.id.to_s, :name => point.name, :desc => point.desc}
         points_hash << point_hash
         point.parents.each do |parent|
-          edge_hash = {:parent => parent.id, :child => point.id}
+          edge_hash = {:parent => parent.id.to_s, :child => point.id.to_s}
           edges_hash << edge_hash
         end
       end
