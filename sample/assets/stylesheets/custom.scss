@@ -97,3 +97,58 @@
     font-family: courier, consolas;
   }
 }
+
+
+.page-point-new, .page-point-edit{
+  padding-top:75px;
+  .field{
+    margin-top: 6px;
+    input[type=text]{
+      padding: 6px;
+      width: 900px;
+      font-size: 16px;
+      border: solid 1px;
+      font-family: courier, consolas;
+    }
+    textarea{
+      padding: 6px;
+      width: 900px;
+      height: 400px;
+      font-size: 16px;
+      border: solid 1px;
+      font-family: courier, consolas;
+    }
+    input[type=submit]{
+      width:280px;
+      height: 36px;
+      line-height: 36px;
+    }
+  }
+}
+
+.page-point-show{
+  margin-top:20px;
+  .action{
+    a{
+      float: right;
+      display: block;
+      width:160px;
+      height: 36px;
+      line-height: 36px;
+      background-color: buttonface;
+      text-align: center;
+      margin-right: 5px;
+    }
+    &:after {
+      content:"";
+      display:block;
+      clear: both;
+    }
+  }
+  .info{
+    margin-top: 20px;
+    width:900px;
+    line-height: 36px;
+    font-family: courier, consolas;
+  }
+}

@@ -12,4 +12,5 @@
     %a.new-point{:href => "/nets/#{@net.id}/points/new"} new point
   .point-list
     - @net.points.each do |point|
-      .point= point.name
+      .point
+        %a{:href => "/nets/#{@net.id}/points/#{point.id}" }=point.name

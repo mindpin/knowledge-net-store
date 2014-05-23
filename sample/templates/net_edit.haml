@@ -1,5 +1,7 @@
 .navbar
   %a{:href=>"/"}首页
+  >
+  %a{:href=>"/nets/#{@net.id}"}= @net.name
 .page-net-edit
   %form{:action => "/nets/#{@net.id}", :method => "post"}
     .field
@@ -8,4 +10,4 @@
       %textarea{:name => "desc", :placeholder => "描述"}=@net.desc
     .field
       %input{:type => "submit", :value => "修改", :class => "button"}
-      %a{:href=>"/"}取消
+      %a{:href=>"/nets/#{@net.id}"}取消
