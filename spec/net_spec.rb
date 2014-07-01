@@ -21,4 +21,13 @@ describe KnowledgeNetStore::Net do
     json.should_not == ""
     JSON.parse(json)["points"].first["id"].class.should == String
   }
+
+  it{
+    KnowledgeNetStore::Net.from_json("js","js blanblan", "~~")
+    KnowledgeNetStore::Net.count.should == 0
+
+    json = IO.read(File.expand_path("../js.json",__FILE__))
+    KnowledgeNetStore::Net.from_json(nil,"js blanblan", "~~")
+    KnowledgeNetStore::Net.count.should == 0
+  }
 end

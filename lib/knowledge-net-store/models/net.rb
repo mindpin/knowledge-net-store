@@ -42,9 +42,12 @@ module KnowledgeNetStore
       hash["edges"].each do |edge_hash|
         parent = id_point_hash[edge_hash["parent"]]
         child  = id_point_hash[edge_hash["child"]]
+        next if parent == child
         child.parents << parent
       end
       net
+    rescue Exception => ex
+      net.destroy if !net.blank?
     end
   end
 end
