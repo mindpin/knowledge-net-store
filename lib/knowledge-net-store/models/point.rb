@@ -2,18 +2,14 @@ module KnowledgeNetStore
   class Point
     include Mongoid::Document
     include Mongoid::Timestamps
+    include KnowledgeNetStore::PointRelation
 
     field :name, :type => String
     field :desc, :type => String
 
-    belongs_to :net, :class_name => 'KnowledgeNetStore::Net'
-    has_and_belongs_to_many :parents,
-      :class_name => 'KnowledgeNetStore::Point',
-      :inverse_of => :children
-    has_and_belongs_to_many :children,
-      :class_name => 'KnowledgeNetStore::Point',
-      :inverse_of => :parents
-
     validates :name, :presence => true, :uniqueness => {:scope => :net_id}
+
+    belongs_to :net, :class_name => 'KnowledgeNetStore::Net'
+    
   end
 end
