@@ -2,7 +2,7 @@ module KnowledgeNetStore
   class Point
     include Mongoid::Document
     include Mongoid::Timestamps
-    include KnowledgeNetStore::PointRelation
+    include ActsAsDag
 
     field :name, :type => String
     field :desc, :type => String
