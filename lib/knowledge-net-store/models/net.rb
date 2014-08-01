@@ -43,7 +43,7 @@ module KnowledgeNetStore
         parent = id_point_hash[edge_hash["parent"]]
         child  = id_point_hash[edge_hash["child"]]
         next if parent == child
-        child.parents << parent
+        child.add_parent parent
       end
       net
     rescue Exception => ex
