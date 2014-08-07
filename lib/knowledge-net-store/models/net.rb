@@ -31,6 +31,16 @@ module KnowledgeNetStore
       }.to_json
     end
 
+    def attrs
+      {
+        name: self.name,
+        desc: self.desc,
+        point_ids: self.point_ids.map(&:to_s),
+        created_at: self.created_at.to_s,
+        updated_at: self.updated_at.to_s
+      }
+    end
+
     def self.from_json(name, desc, json)
       net = self.create!(:name => name, :desc => desc)
       hash = JSON.parse(json)
