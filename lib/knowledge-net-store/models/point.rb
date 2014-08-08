@@ -13,6 +13,7 @@ module KnowledgeNetStore
     
     def attrs
       {
+        id: self.id.to_s,
         net_id: self.net.id.to_s,
         name: self.name,
         desc: self.desc,

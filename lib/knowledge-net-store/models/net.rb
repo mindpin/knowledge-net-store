@@ -33,6 +33,7 @@ module KnowledgeNetStore
 
     def attrs
       {
+        id: self.id.to_s,
         name: self.name,
         desc: self.desc,
         point_ids: self.point_ids.map(&:to_s),
