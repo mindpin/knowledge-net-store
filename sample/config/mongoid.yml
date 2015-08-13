@@ -1,0 +1,12 @@
+development:
+  sessions:
+    default:
+      database: knowledge_net_store_dev
+      hosts:
+        - localhost:27017
+test:
+  sessions:
+    default:
+      database: knowledge_net_store_test
+      hosts:
+        - localhost:27017

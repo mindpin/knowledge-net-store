@@ -1,0 +1,11 @@
+= form_for @net do |f|
+  .field
+    %input{:type => "text", :name => "net[name]", :placeholder => "名称", :value => @net.name}
+  .field
+    %textarea{:name => "net[desc]", :placeholder => "描述"}=@net.desc
+  .field
+    %input{:type => "submit", :value => (@net.new_record? ? "创建" : "修改"), :class => "button"}
+
+%a{:href=>(nets_path)}取消
+
+
