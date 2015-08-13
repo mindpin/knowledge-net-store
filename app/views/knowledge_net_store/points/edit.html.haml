@@ -1,0 +1,23 @@
+.navbar
+  %a{:href=>(root_path)}首页
+  >
+  %a{:href=>(net_path(@net))}= @net.name
+
+.page-point-edit
+  = form_for [@net, @point] do |f|
+    .field
+      %input{:type => "text", :name => "point[name]", :placeholder => "名称", :value => @point.name}
+    .field
+      %textarea{:name => "point[desc]", :placeholder => "描述"}= @point.desc
+    .field
+      %label.checkboxs 前置
+      %input{:type => "hidden", :name => "parent_ids[]", :value => ""}
+      - points = @net.points - [@point]
+      - points.each do |point|
+        - checked = @point.parents.include?(point)
+        %label.checkbox
+          %input{:type => "checkbox", :name => "point[parent_ids][]", :value => point.id, :checked => checked}
+          = point.name
+    .field
+      %input{:type => "submit", :value => "修改", :class => "button"}
+      %a{:href=>(net_point_path(@net, @point))}取消
