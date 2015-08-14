@@ -16,9 +16,11 @@
   .parents
     前置
     - @point.parents.each do |parent|
-      .point= parent.name
+      .point
+        %a{href: (net_point_path(@net,parent))}= parent.name
 
   .children
     后置
     - @point.children.each do |child|
-      .point= child.name
+      .point
+        %a{href: (net_point_path(@net, child))}= child.name
