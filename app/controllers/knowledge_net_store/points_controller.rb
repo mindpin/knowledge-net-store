@@ -1,9 +1,9 @@
 module KnowledgeNetStore
   class PointsController < KnowledgeNetStore::ApplicationController
     before_action :set_net
-    def index
-      @points = @net.points
-    end
+    #def index
+      #@points = @net.points
+    #end
 
     def show
       @point =  @net.points.find params[:id]
@@ -38,7 +38,7 @@ module KnowledgeNetStore
     def destroy
       @point = KnowledgeNetStore::Point.find(params[:id])
       @point.destroy
-      redirect_to root_path
+      redirect_to @net
     end
 
     private
