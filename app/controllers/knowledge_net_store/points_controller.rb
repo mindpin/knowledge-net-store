@@ -16,6 +16,8 @@ module KnowledgeNetStore
     def create
       @point = @net.points.new point_params
       if @point.save
+        parent_ids = params[:point][:parent_ids]
+        @point.change_parents KnowledgeNetStore::Point.where(:id.in => parent_ids).to_a unless parent_ids.blank?
         redirect_to [@net, @point]
       else
         render :new
@@ -29,6 +31,8 @@ module KnowledgeNetStore
     def update
       @point = @net.points.find params[:id]
       if @point.update_attributes point_params
+        parent_ids = params[:point][:parent_ids]
+        @point.change_parents KnowledgeNetStore::Point.where(:id.in => parent_ids).to_a unless parent_ids.blank?
         redirect_to [@net, @point]
       else
         render :edit
@@ -47,7 +51,7 @@ module KnowledgeNetStore
     end
 
     def point_params
-      params.require(:point).permit(:name, :desc, parent_ids: [])
+      params.require(:point).permit(:name, :desc)
     end
   end
 end
