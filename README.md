@@ -6,7 +6,11 @@
 # Gemfile
 gem 'knowledge-net-store', 
   :git => 'git://github.com/mindpin/knowledge-net-store.git',
-  :tag => '0.1.1'
+  :tag => 'v1.0.0-beta1'
+
+gem "acts-as-dag",
+  :git => "git://github.com/mindpin/acts-as-dag.git",
+  :tag => "0.0.2"
 ```
 
 
