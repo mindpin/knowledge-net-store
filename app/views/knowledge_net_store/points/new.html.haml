@@ -12,7 +12,7 @@
 
     .field
       %label.checkboxs 前置
-      %input{:type => "hidden", :name => "parent_ids[]", :value => ""}
+      %input{:type => "hidden", :name => "point[parent_ids][]", :value => ""}
       - points = @net.points - [@point]
       - points.each do |point|
         - checked = @point.parents.include?(point)
