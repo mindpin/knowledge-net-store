@@ -42,4 +42,4 @@ gem 'play_auth', :github => 'mindpin/play_auth',
                  :tag => :latest
 
 gem 'knowledge-net-store', path: '../'
-gem "acts-as-dag", :github => "mindpin/acts-as-dag", :tag => "v0.0.1"
+gem "acts-as-dag", :github => "mindpin/acts-as-dag", :tag => "0.0.2"
