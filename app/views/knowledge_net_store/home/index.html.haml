@@ -1,0 +1,12 @@
+.navbar
+  %a{:href=>"/"}首页
+.page-net-list
+  .action
+    %a.new{:href=>"/nets/new"} 新建
+  .list
+    - KnowledgeNetStore::Net.all.each do |net|
+      .net
+        .info
+          %a.name{:href=>"/nets/#{net.id}"}= net.name
+          .created_at= "创建于 #{net.created_at}"
+

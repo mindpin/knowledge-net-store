@@ -1,0 +1,6 @@
+.navbar
+  %a{:href=>(root_path)}首页
+  >
+  %a{:href=>(net_path(@net))}= @net.name
+.page-net-edit
+  = render "form"
