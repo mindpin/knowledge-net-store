@@ -4,7 +4,7 @@ source 'http://rubygems.org'
 gemspec
 
 gem "mongoid", "~> 4.0.0"
-gem "acts-as-dag", :github => "mindpin/acts-as-dag", :tag => "v0.0.1"
+gem "acts-as-dag", :github => "mindpin/acts-as-dag", :tag => "0.0.2"
 
 group :test do
   gem "rspec", "~> 2.3"

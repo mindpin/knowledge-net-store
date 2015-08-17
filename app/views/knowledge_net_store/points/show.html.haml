@@ -1,0 +1,26 @@
+.navbar
+  %a{:href=>(root_path)}首页
+  >
+  %a{:href=>(net_path(@net))}= @net.name
+
+.page-point-show
+  .action
+    %a.edit{:href => (edit_net_point_path(@net, @point))} 编辑
+    -#%a.delete{:href => "javascript:;",:"data-pointid" => @point.id, :"data-netid" => @net.id}删除
+    = link_to '删除', [@net, @point], method: :delete, data: { confirm: '你确定?' }, class: 'delete'
+
+  .info
+    .name= @point.name
+    .desc= @point.desc
+
+  .parents
+    前置
+    - @point.parents.each do |parent|
+      .point
+        %a{href: (net_point_path(@net,parent))}= parent.name
+
+  .children
+    后置
+    - @point.children.each do |child|
+      .point
+        %a{href: (net_point_path(@net, child))}= child.name

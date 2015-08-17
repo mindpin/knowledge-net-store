@@ -1,0 +1,19 @@
+.navbar
+  %a{:href=>(root_path)}首页
+.page-net-show
+
+  .action
+    %a.edit{:href => (edit_net_path(@net))} 编辑
+    = link_to '删除', @net, method: :delete, data: { confirm: '你确定?' }
+
+  .info
+    .name= @net.name
+    .desc= @net.desc
+    
+  .action
+    %a.new-point{:href => (new_net_point_path(@net))} new point
+
+  .point-list
+    - @net.points.each do |point|
+      .point
+        %a{:href => net_point_path(@net, point) }=point.name
