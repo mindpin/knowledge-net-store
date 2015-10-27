@@ -4,9 +4,9 @@
 ### 引入 gem
 ```ruby
 # Gemfile
-gem 'knowledge-net-store', 
+gem 'knowledge-net-store',
   :git => 'git://github.com/mindpin/knowledge-net-store.git',
-  :tag => 'v1.0.0-beta1'
+  :tag => '1.0.0-beta2'
 
 gem "acts-as-dag",
   :git => "git://github.com/mindpin/acts-as-dag.git",
